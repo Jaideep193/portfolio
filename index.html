@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Chen - Electrical Engineering Portfolio</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#10B981'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+.hero-gradient {
+background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+.skill-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.timeline-item::before {
+content: '';
+position: absolute;
+left: -38px;
+top: 0;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+background-color: #4F46E5;
+border: 3px solid white;
+z-index: 1;
+}
+.timeline-line {
+position: absolute;
+left: -31px;
+top: 0;
+bottom: 0;
+width: 2px;
+background-color: #e5e7eb;
+z-index: 0;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #4F46E5;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #4F46E5;
+border-color: #4F46E5;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+left: 6px;
+top: 2px;
+width: 5px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.toggle-switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.toggle-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.toggle-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e5e7eb;
+transition: .4s;
+border-radius: 24px;
+}
+.toggle-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .toggle-slider {
+background-color: #4F46E5;
+}
+input:checked + .toggle-slider:before {
+transform: translateX(24px);
+}
+.custom-range {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e5e7eb;
+outline: none;
+}
+.custom-range::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background: #4F46E5;
+cursor: pointer;
+}
+.custom-range::-moz-range-thumb {
+width: 18px;
+height: 18px;
+border-radius: 50%;
+background: #4F46E5;
+cursor: pointer;
+border: none;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header/Navigation -->
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Alex</a>
+<nav class="hidden md:flex space-x-8">
+<a href="#about" class="text-gray-700 hover:text-primary transition-colors">About</a>
+<a href="#education" class="text-gray-700 hover:text-primary transition-colors">Education</a>
+<a href="#skills" class="text-gray-700 hover:text-primary transition-colors">Skills</a>
+<a href="#certifications" class="text-gray-700 hover:text-primary transition-colors">Certifications</a>
+<a href="#projects" class="text-gray-700 hover:text-primary transition-colors">Projects</a>
+<a href="#internships" class="text-gray-700 hover:text-primary transition-colors">Internships</a>
+<a href="#contact" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+</nav>
+<button class="md:hidden flex items-center justify-center w-10 h-10">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</header>
+<!-- Mobile Navigation Menu (Hidden by default) -->
+<div class="fixed inset-0 bg-white z-50 hidden flex-col pt-16">
+<div class="container mx-auto px-4 py-8 flex flex-col space-y-6">
+<a href="#about" class="text-xl text-gray-800 hover:text-primary transition-colors">About</a>
+<a href="#education" class="text-xl text-gray-800 hover:text-primary transition-colors">Education</a>
+<a href="#skills" class="text-xl text-gray-800 hover:text-primary transition-colors">Skills</a>
+<a href="#certifications" class="text-xl text-gray-800 hover:text-primary transition-colors">Certifications</a>
+<a href="#projects" class="text-xl text-gray-800 hover:text-primary transition-colors">Projects</a>
+<a href="#internships" class="text-xl text-gray-800 hover:text-primary transition-colors">Internships</a>
+<a href="#contact" class="text-xl text-gray-800 hover:text-primary transition-colors">Contact</a>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-gradient pt-24 pb-16 md:py-32">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-1/2 text-white mb-10 md:mb-0">
+<h1 class="text-4xl md:text-5xl font-bold mb-4">Alex Chen</h1>
+<h2 class="text-xl md:text-2xl font-light mb-6">Electrical Engineering Student | Aspiring Embedded Systems Developer</h2>
+<p class="text-gray-300 mb-8 max-w-lg">Building innovative solutions at the intersection of hardware and software. Passionate about creating embedded systems that solve real-world problems.</p>
+<div class="flex space-x-4 mb-8">
+<a href="https://linkedin.com/in/alexchen" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+<i class="ri-linkedin-fill text-white"></i>
+</a>
+<a href="https://github.com/alexchen" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+<i class="ri-github-fill text-white"></i>
+</a>
+<a href="mailto:alex.chen@example.com" class="flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+<i class="ri-mail-line text-white"></i>
+</a>
+<a href="https://wa.me/1234567890" target="_blank" class="flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+<i class="ri-whatsapp-line text-white"></i>
+</a>
+</div>
+<div class="flex space-x-4">
+<a href="#contact" class="px-6 py-3 bg-primary hover:bg-primary/90 text-white font-medium !rounded-button whitespace-nowrap transition-colors">Contact Me</a>
+<a href="#projects" class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium !rounded-button whitespace-nowrap transition-colors">View Projects</a>
+</div>
+</div>
+<div class="md:w-2/5">
+<div class="relative">
+<div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/30 mx-auto">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20Asian%20male%20engineering%20student%20with%20glasses%2C%20clean%20professional%20appearance%2C%20neutral%20background%2C%20high%20quality%20professional%20portrait&width=400&height=400&seq=1&orientation=squarish" alt="Alex Chen" class="w-full h-full object-cover object-top">
+</div>
+<div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white py-2 px-6 rounded-full shadow-lg">
+<p class="text-primary font-medium">Available for Internships</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+<div class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full">
+<i class="ri-arrow-down-line text-white"></i>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">About Me</h2>
+<div class="flex flex-col md:flex-row items-start gap-12">
+<div class="md:w-1/2">
+<p class="text-gray-700 leading-relaxed mb-6">
+Hello! I'm Alex Chen, a final-year Electrical Engineering student at Massachusetts Institute of Technology with a passion for embedded systems and IoT solutions. My journey in engineering began when I disassembled my first electronic toy at age 10, curious about what made it work.
+</p>
+<p class="text-gray-700 leading-relaxed mb-6">
+Throughout my academic career, I've focused on bridging the gap between hardware and software, developing skills in microcontroller programming, PCB design, and system integration. I believe that the most innovative solutions come from understanding both the electrical components and the software that drives them.
+</p>
+<p class="text-gray-700 leading-relaxed">
+Outside of academics, I enjoy participating in hackathons, contributing to open-source projects, and mentoring junior engineering students. I'm currently seeking opportunities in embedded systems development where I can apply my technical knowledge to create impactful solutions.
+</p>
+</div>
+<div class="md:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
+<i class="ri-graduation-cap-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Education</h3>
+<p class="text-gray-600">B.S. in Electrical Engineering, Massachusetts Institute of Technology</p>
+</div>
+<div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
+<i class="ri-code-box-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Specialization</h3>
+<p class="text-gray-600">Embedded Systems, IoT Development, Circuit Design</p>
+</div>
+<div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
+<i class="ri-award-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Academic Status</h3>
+<p class="text-gray-600">Final Year Student, CGPA: 3.85/4.0</p>
+</div>
+<div class="bg-gray-50 p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
+<i class="ri-target-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Career Goal</h3>
+<p class="text-gray-600">Embedded Systems Engineer in Renewable Energy Technology</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Section -->
+<section id="education" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Education</h2>
+<div class="max-w-3xl mx-auto relative">
+<div class="timeline-line"></div>
+<!-- MIT -->
+<div class="timeline-item relative pl-12 pb-16">
+<div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="md:w-1/4">
+<div class="w-20 h-20 bg-gray-100 rounded flex items-center justify-center">
+<span class="text-2xl font-bold text-primary">MIT</span>
+</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Massachusetts Institute of Technology</h3>
+<p class="text-gray-600 mb-2">Bachelor of Science in Electrical Engineering</p>
+<p class="text-gray-500 mb-4">2021 - Present (Expected Graduation: May 2025)</p>
+<div class="flex items-center mb-4">
+<span class="text-gray-700 font-medium mr-2">CGPA:</span>
+<span class="text-primary font-semibold">3.85/4.0</span>
+</div>
+<p class="text-gray-700 mb-4">Relevant Coursework: Microprocessor Systems, Digital Signal Processing, Embedded Systems Design, Power Electronics, Control Systems</p>
+<div class="flex space-x-4">
+<a href="/transcripts/mit_transcript.pdf" target="_blank" class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors">View Transcript</a>
+<a href="/certificates/mit_certificate.pdf" download class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">Download Certificate</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Community College -->
+<div class="timeline-item relative pl-12 pb-16">
+<div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="md:w-1/4">
+<div class="w-20 h-20 bg-gray-100 rounded flex items-center justify-center">
+<span class="text-2xl font-bold text-primary">BCC</span>
+</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Boston Community College</h3>
+<p class="text-gray-600 mb-2">Associate of Science in Engineering</p>
+<p class="text-gray-500 mb-4">2019 - 2021</p>
+<div class="flex items-center mb-4">
+<span class="text-gray-700 font-medium mr-2">GPA:</span>
+<span class="text-primary font-semibold">3.92/4.0</span>
+</div>
+<p class="text-gray-700 mb-4">Relevant Coursework: Circuit Analysis, Engineering Mathematics, C Programming, Physics for Engineers</p>
+<div class="flex space-x-4">
+<a href="/transcripts/mit_transcript.pdf" target="_blank" class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors">View Transcript</a>
+<a href="/certificates/mit_certificate.pdf" download class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">Download Certificate</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- High School -->
+<div class="timeline-item relative pl-12">
+<div class="bg-white p-6 rounded shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col md:flex-row gap-6">
+<div class="md:w-1/4">
+<div class="w-20 h-20 bg-gray-100 rounded flex items-center justify-center">
+<span class="text-2xl font-bold text-primary">NHS</span>
+</div>
+</div>
+<div class="md:w-3/4">
+<h3 class="text-xl font-semibold mb-2">Newton High School</h3>
+<p class="text-gray-600 mb-2">High School Diploma, STEM Focus</p>
+<p class="text-gray-500 mb-4">2015 - 2019</p>
+<div class="flex items-center mb-4">
+<span class="text-gray-700 font-medium mr-2">GPA:</span>
+<span class="text-primary font-semibold">4.0/4.0</span>
+</div>
+<p class="text-gray-700 mb-4">Achievements: Science Olympiad State Finalist, Robotics Club President, Mathematics Honor Society</p>
+<div class="flex space-x-4">
+<a href="/transcripts/nhs_transcript.pdf" target="_blank" class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors">View Transcript</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Technical Skills -->
+<div class="bg-gray-50 p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mr-4">
+<i class="ri-code-s-slash-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Programming Languages</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=C++%20programming%20language%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=10&orientation=squarish" alt="C++" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">C/C++</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Python%20programming%20language%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=11&orientation=squarish" alt="Python" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Python</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=JavaScript%20programming%20language%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=12&orientation=squarish" alt="JavaScript" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">JavaScript</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Assembly%20programming%20language%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=13&orientation=squarish" alt="Assembly" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Assembly Language</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=VHDL%20programming%20language%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=14&orientation=squarish" alt="VHDL" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">VHDL</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=HTML5%20and%20CSS3%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=15&orientation=squarish" alt="HTML/CSS" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">HTML/CSS</span>
+</li>
+</ul>
+</div>
+<!-- Tools & Platforms -->
+<div class="bg-gray-50 p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mr-4">
+<i class="ri-tools-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Tools & Platforms</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Arduino%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=16&orientation=squarish" alt="Arduino" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Arduino</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Raspberry%20Pi%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=17&orientation=squarish" alt="Raspberry Pi" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Raspberry Pi</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=MATLAB%20software%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=18&orientation=squarish" alt="MATLAB" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">MATLAB</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Altium%20Designer%20software%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=19&orientation=squarish" alt="Altium Designer" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Altium Designer</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Oscilloscope%20device%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=20&orientation=squarish" alt="Oscilloscopes" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Oscilloscopes & Logic Analyzers</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Git%20version%20control%20logo%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=21&orientation=squarish" alt="Git" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Git & GitHub</span>
+</li>
+</ul>
+</div>
+<!-- Soft Skills -->
+<div class="bg-gray-50 p-8 rounded shadow-sm">
+<div class="flex items-center mb-6">
+<div class="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mr-4">
+<i class="ri-user-heart-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Soft Skills</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Team%20collaboration%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=22&orientation=squarish" alt="Team Collaboration" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Team Collaboration</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Technical%20presentation%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=23&orientation=squarish" alt="Technical Presentation" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Technical Presentation</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Problem%20solving%20puzzle%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=24&orientation=squarish" alt="Problem Solving" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Problem Solving</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Time%20management%20clock%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=25&orientation=squarish" alt="Time Management" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Time Management</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Technical%20documentation%20file%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=26&orientation=squarish" alt="Technical Documentation" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Technical Documentation</span>
+</li>
+<li class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=Client%20communication%20chat%20icon%20on%20white%20background%2C%20minimalist%20clean%20design&width=32&height=32&seq=27&orientation=squarish" alt="Client Communication" class="w-8 h-8 rounded-full mr-3 object-cover">
+<span class="text-gray-700">Client Communication</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Additional Skills -->
+<div class="mt-12 bg-gray-50 p-8 rounded shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Additional Technical Skills</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">PCB Design</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">Circuit Analysis</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">Microcontroller Programming</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">Digital Signal Processing</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">RTOS</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">IoT Protocols</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">Power Electronics</span>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<span class="text-gray-700">Sensor Integration</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications Section -->
+<section id="certifications" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-6">Certifications & Accomplishments</h2>
+<p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Continuous learning is essential in the rapidly evolving field of electrical engineering. Here are some of the certifications and courses I've completed to enhance my skills.</p>
+<!-- Filter Buttons -->
+<div class="flex flex-wrap justify-center gap-4 mb-12">
+<button class="px-4 py-2 bg-primary text-white !rounded-button whitespace-nowrap transition-colors">All</button>
+<button class="px-4 py-2 bg-white text-gray-700 hover:bg-gray-100 !rounded-button whitespace-nowrap transition-colors">Technical</button>
+<button class="px-4 py-2 bg-white text-gray-700 hover:bg-gray-100 !rounded-button whitespace-nowrap transition-colors">Professional</button>
+<button class="px-4 py-2 bg-white text-gray-700 hover:bg-gray-100 !rounded-button whitespace-nowrap transition-colors">Academic</button>
+</div>
+<!-- Certifications Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Certification 1 -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center">
+<div class="flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full">
+<i class="ri-award-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-semibold mb-2">Embedded Systems Professional Certificate</h3>
+<p class="text-gray-600 mb-4">Coursera & University of Colorado Boulder</p>
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm text-gray-500">Issued: March 2024</span>
+<span class="text-sm text-primary">Credential ID: ESPC-2024-AC</span>
+</div>
+<div class="flex space-x-3">
+<a href="/certificates/embedded_systems_cert.pdf" target="_blank" class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors flex-1">View</a>
+<a href="/certificates/embedded_systems_cert.pdf" download class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors flex-1">Download</a>
+</div>
+</div>
+</div>
+<!-- Certification 2 -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center">
+<div class="flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full">
+<i class="ri-cpu-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-semibold mb-2">IoT Specialization</h3>
+<p class="text-gray-600 mb-4">Coursera & University of California, Irvine</p>
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm text-gray-500">Issued: November 2023</span>
+<span class="text-sm text-primary">Credential ID: IOT-2023-AC</span>
+</div>
+<div class="flex space-x-3">
+<a href="/certificates/embedded_systems_cert.pdf" target="_blank" class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors flex-1">View</a>
+<a href="/certificates/embedded_systems_cert.pdf" download class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors flex-1">Download</a>
+</div>
+</div>
+</div>
+<!-- Certification 3 -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center">
+<div class="flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full">
+<i class="ri-circuit-board-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-semibold mb-2">PCB Design and Manufacturing</h3>
+<p class="text-gray-600 mb-4">Udemy</p>
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm text-gray-500">Issued: July 2023</span>
+<span class="text-sm text-primary">Credential ID: PCB-2023-AC</span>
+</div>
+<div class="flex space-x-3">
+<a href="/certificates/embedded_systems_cert.pdf" target="_blank" class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors flex-1">View</a>
+<a href="/certificates/embedded_systems_cert.pdf" download class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors flex-1">Download</a>
+</div>
+</div>
+</div>
+<!-- Certification 4 -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center">
+<div class="flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full">
+<i class="ri-robot-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-semibold mb-2">Machine Learning for Engineers</h3>
+<p class="text-gray-600 mb-4">edX & Harvard University</p>
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm text-gray-500">Issued: February 2023</span>
+<span class="text-sm text-primary">Credential ID: MLE-2023-AC</span>
+</div>
+<div class="flex space-x-3">
+<a href="/certificates/embedded_systems_cert.pdf" target="_blank" class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors flex-1">View</a>
+<a href="/certificates/embedded_systems_cert.pdf" download class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors flex-1">Download</a>
+</div>
+</div>
+</div>
+<!-- Certification 5 -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center">
+<div class="flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full">
+<i class="ri-terminal-box-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-semibold mb-2">Advanced C Programming for Embedded Systems</h3>
+<p class="text-gray-600 mb-4">LinkedIn Learning</p>
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm text-gray-500">Issued: October 2022</span>
+<span class="text-sm text-primary">Credential ID: ACPES-2022-AC</span>
+</div>
+<div class="flex space-x-3">
+<a href="/certificates/embedded_systems_cert.pdf" target="_blank" class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors flex-1">View</a>
+<a href="/certificates/embedded_systems_cert.pdf" download class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors flex-1">Download</a>
+</div>
+</div>
+</div>
+<!-- Certification 6 -->
+<div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+<div class="h-40 bg-gray-100 flex items-center justify-center">
+<div class="flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full">
+<i class="ri-database-2-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-lg font-semibold mb-2">Digital Signal Processing</h3>
+<p class="text-gray-600 mb-4">NPTEL & IIT Kharagpur</p>
+<div class="flex justify-between items-center mb-4">
+<span class="text-sm text-gray-500">Issued: May 2022</span>
+<span class="text-sm text-primary">Credential ID: DSP-2022-AC</span>
+</div>
+<div class="flex space-x-3">
+<a href="/certificates/embedded_systems_cert.pdf" target="_blank" class="px-4 py-2 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors flex-1">View</a>
+<a href="/certificates/embedded_systems_cert.pdf" download class="px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white !rounded-button whitespace-nowrap transition-colors flex-1">Download</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-6">Projects</h2>
+<p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Here are some of the projects I've worked on that showcase my skills and interests in electrical engineering and embedded systems.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="bg-gray-50 rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Smart%20home%20automation%20system%20with%20IoT%20sensors%20and%20microcontrollers%20on%20a%20circuit%20board%2C%20clean%20professional%20product%20photography%20with%20neutral%20background%2C%20high%20quality%20detailed%20image%20of%20electronic%20components&width=600&height=400&seq=2&orientation=landscape" alt="Smart Home IoT Hub" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Smart Home IoT Hub</h3>
+<p class="text-gray-600 mb-4">A centralized IoT hub for smart home automation using ESP32, with custom PCB design and 3D-printed enclosure. Features include temperature monitoring, lighting control, and security integration.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">ESP32</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">MQTT</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">PCB Design</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">C++</span>
+</div>
+<div class="flex">
+<a href="https://github.com/alexchen/smart-home-iot-hub" target="_blank" class="px-6 py-2 flex items-center justify-center bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">
+<i class="ri-github-fill mr-2"></i>
+View on GitHub
+</a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-gray-50 rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Solar-powered%20weather%20station%20with%20sensors%20and%20display%20panel%2C%20clean%20professional%20product%20photography%20with%20neutral%20background%2C%20high%20quality%20detailed%20image%20of%20electronic%20device%20outdoors&width=600&height=400&seq=3&orientation=landscape" alt="Solar-Powered Weather Station" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Solar-Powered Weather Station</h3>
+<p class="text-gray-600 mb-4">A low-power weather monitoring station powered by solar energy. Collects temperature, humidity, pressure, and air quality data and transmits it wirelessly to a base station for analysis.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Arduino</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Solar Power</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">LoRa</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Sensors</span>
+</div>
+<div class="flex">
+<a href="https://github.com/alexchen/smart-home-iot-hub" target="_blank" class="px-6 py-2 flex items-center justify-center bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">
+<i class="ri-github-fill mr-2"></i>
+View on GitHub
+</a>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-gray-50 rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Gesture-controlled%20robot%20arm%20with%20servo%20motors%20and%20microcontroller%2C%20clean%20professional%20product%20photography%20with%20neutral%20background%2C%20high%20quality%20detailed%20image%20of%20robotic%20system&width=600&height=400&seq=4&orientation=landscape" alt="Gesture-Controlled Robot Arm" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Gesture-Controlled Robot Arm</h3>
+<p class="text-gray-600 mb-4">A 5-DOF robotic arm controlled by hand gestures captured through a camera. Uses computer vision algorithms to translate hand movements into precise robotic arm movements.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Raspberry Pi</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">OpenCV</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Servo Motors</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Python</span>
+</div>
+<div class="flex">
+<a href="https://github.com/alexchen/gesture-robot-arm" target="_blank" class="px-6 py-2 flex items-center justify-center bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">
+<i class="ri-github-fill mr-2"></i>
+View on GitHub
+</a>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="bg-gray-50 rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Digital%20signal%20processing%20audio%20equalizer%20with%20LED%20visualization%2C%20clean%20professional%20product%20photography%20with%20neutral%20background%2C%20high%20quality%20detailed%20image%20of%20audio%20electronic%20device&width=600&height=400&seq=5&orientation=landscape" alt="Digital Audio Equalizer" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-2">Digital Audio Equalizer</h3>
+<p class="text-gray-600 mb-4">A real-time digital audio equalizer with spectrum analyzer and LED visualization. Implements various DSP algorithms for audio processing and features a custom-designed user interface.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">STM32</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">DSP</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">FFT</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">C</span>
+</div>
+<div class="flex">
+<a href="https://github.com/alexchen/smart-home-iot-hub" target="_blank" class="px-6 py-2 flex items-center justify-center bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">
+<i class="ri-github-fill mr-2"></i>
+View on GitHub
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="https://readdy.ai/home/d54a6f84-db4e-4062-b303-2998b398c1d4/9328f10a-2f5c-49fb-b3a3-a4e36cd89021" data-readdy="true" class="inline-block px-6 py-3 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">View All Projects</a>
+</div>
+</div>
+</section>
+<!-- Internships Section -->
+<section id="internships" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-16">Internship Experience</h2>
+<div class="max-w-4xl mx-auto">
+<!-- Internship 1 -->
+<div class="flex flex-col md:flex-row bg-white rounded shadow-sm mb-8 overflow-hidden">
+<div class="md:w-1/4 bg-gray-100 p-6 flex items-center justify-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+<i class="ri-building-4-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="md:w-3/4 p-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<h3 class="text-xl font-semibold">Embedded Systems Engineering Intern</h3>
+<span class="text-gray-500 mt-2 md:mt-0">Summer 2024</span>
+</div>
+<p class="text-primary font-medium mb-4">TechSolutions Inc., Boston, MA</p>
+<ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+<li>Developed firmware for a smart energy monitoring system using STM32 microcontrollers</li>
+<li>Designed and implemented power management algorithms that improved battery life by 30%</li>
+<li>Collaborated with cross-functional teams to integrate hardware and software components</li>
+<li>Created technical documentation and presented project progress to stakeholders</li>
+</ul>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">STM32</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">C/C++</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Power Management</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">RTOS</span>
+</div>
+</div>
+</div>
+<!-- Internship 2 -->
+<div class="flex flex-col md:flex-row bg-white rounded shadow-sm mb-8 overflow-hidden">
+<div class="md:w-1/4 bg-gray-100 p-6 flex items-center justify-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+<i class="ri-building-2-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="md:w-3/4 p-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<h3 class="text-xl font-semibold">IoT Development Intern</h3>
+<span class="text-gray-500 mt-2 md:mt-0">Winter 2023</span>
+</div>
+<p class="text-primary font-medium mb-4">ConnectSmart Technologies, Cambridge, MA</p>
+<ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+<li>Designed and prototyped IoT devices for smart agriculture applications</li>
+<li>Implemented wireless communication protocols (LoRa, BLE) for remote sensor networks</li>
+<li>Developed a web dashboard for real-time monitoring of sensor data</li>
+<li>Conducted field tests and optimized system performance based on collected data</li>
+</ul>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">ESP32</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">LoRa</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Python</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">JavaScript</span>
+</div>
+</div>
+</div>
+<!-- Internship 3 -->
+<div class="flex flex-col md:flex-row bg-white rounded shadow-sm overflow-hidden">
+<div class="md:w-1/4 bg-gray-100 p-6 flex items-center justify-center">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+<i class="ri-building-line text-primary text-3xl"></i>
+</div>
+</div>
+<div class="md:w-3/4 p-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+<h3 class="text-xl font-semibold">Research Assistant</h3>
+<span class="text-gray-500 mt-2 md:mt-0">Summer 2022</span>
+</div>
+<p class="text-primary font-medium mb-4">MIT Electronics Research Lab, Cambridge, MA</p>
+<ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+<li>Assisted in research on energy-efficient microcontroller architectures</li>
+<li>Developed test fixtures and conducted experiments to validate research hypotheses</li>
+<li>Analyzed performance data and contributed to a research paper published in IEEE</li>
+<li>Created simulation models to predict system behavior under various conditions</li>
+</ul>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">MATLAB</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Circuit Design</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Data Analysis</span>
+<span class="px-3 py-1 bg-gray-200 text-gray-700 rounded-full text-sm">Technical Writing</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-6">Get In Touch</h2>
+<p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto">Feel free to reach out if you have any questions, project ideas, or opportunities. I'm always open to discussing new projects and collaborations.</p>
+<div class="flex flex-col md:flex-row gap-12 max-w-5xl mx-auto">
+<!-- Contact Form -->
+<div class="md:w-2/3 bg-gray-50 p-8 rounded shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block text-gray-700 mb-2">Name</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Your Name">
+</div>
+<div>
+<label for="email" class="block text-gray-700 mb-2">Email</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="your.email@example.com">
+</div>
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 mb-2">Subject</label>
+<input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="What is this regarding?">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" placeholder="Your message here..."></textarea>
+</div>
+<div class="mb-6 flex items-center">
+<input type="checkbox" id="consent" class="custom-checkbox mr-3">
+<label for="consent" class="text-gray-700">I agree to be contacted regarding my message</label>
+</div>
+<button type="submit" class="px-6 py-3 bg-primary text-white hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">Send Message</button>
+</form>
+</div>
+<!-- Contact Info -->
+<div class="md:w-1/3">
+<div class="bg-gray-50 p-8 rounded shadow-sm mb-8">
+<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full mr-4 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-500 text-sm">Email</p>
+<a href="mailto:alex.chen@example.com" class="text-gray-700 hover:text-primary">alex.chen@example.com</a>
+</div>
+</li>
+<li class="flex items-start">
+<div class="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full mr-4 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-500 text-sm">Phone</p>
+<a href="tel:+1234567890" class="text-gray-700 hover:text-primary">+1 (234) 567-890</a>
+</div>
+</li>
+<li class="flex items-start">
+<div class="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full mr-4 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-500 text-sm">Location</p>
+<p class="text-gray-700">Cambridge, Massachusetts, USA</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-8 rounded shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Connect With Me</h3>
+<div class="flex space-x-4">
+<a href="https://linkedin.com/in/alexchen" target="_blank" class="flex items-center justify-center w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors">
+<i class="ri-linkedin-fill text-primary"></i>
+</a>
+<a href="https://github.com/alexchen" target="_blank" class="flex items-center justify-center w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors">
+<i class="ri-github-fill text-primary"></i>
+</a>
+<a href="https://twitter.com/alexchen" target="_blank" class="flex items-center justify-center w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors">
+<i class="ri-twitter-fill text-primary"></i>
+</a>
+<a href="https://wa.me/1234567890" target="_blank" class="flex items-center justify-center w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full transition-colors">
+<i class="ri-whatsapp-line text-primary"></i>
+</a>
+</div>
+<div class="mt-6">
+<a href="#" class="block px-4 py-2 bg-primary text-white text-center hover:bg-primary/90 !rounded-button whitespace-nowrap transition-colors">Download Resume</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between">
+<div class="mb-8 md:mb-0">
+<h3 class="text-2xl font-['Pacifico'] mb-4">Alex Chen</h3>
+<p class="text-gray-400 max-w-xs">Electrical Engineering Student passionate about embedded systems and IoT solutions.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+<li><a href="#education" class="text-gray-400 hover:text-white transition-colors">Education</a></li>
+<li><a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a></li>
+<li><a href="#certifications" class="text-gray-400 hover:text-white transition-colors">Certifications</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">More</h4>
+<ul class="space-y-2">
+<li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+<li><a href="#internships" class="text-gray-400 hover:text-white transition-colors">Internships</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Resume</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Connect</h4>
+<ul class="space-y-2">
+<li><a href="https://linkedin.com/in/alexchen" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a></li>
+<li><a href="https://github.com/alexchen" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+<li><a href="mailto:alex.chen@example.com" class="text-gray-400 hover:text-white transition-colors">Email</a></li>
+<li><a href="https://wa.me/1234567890" class="text-gray-400 hover:text-white transition-colors">WhatsApp</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">&copy; 2025 Alex Chen. All rights reserved.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-6 right-6 w-12 h-12 bg-primary text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+<i class="ri-arrow-up-line text-xl"></i>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Handle file downloads and views
+document.querySelectorAll('a[download]').forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const fileName = this.getAttribute('href').split('/').pop();
+const notification = document.createElement('div');
+notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded shadow-lg z-50';
+notification.textContent = `Downloading ${fileName}...`;
+document.body.appendChild(notification);
+setTimeout(() => {
+notification.remove();
+}, 3000);
+});
+});
+document.querySelectorAll('a[target="_blank"]').forEach(link => {
+link.addEventListener('click', function(e) {
+e.preventDefault();
+const fileName = this.getAttribute('href').split('/').pop();
+const notification = document.createElement('div');
+notification.className = 'fixed bottom-4 right-4 bg-primary text-white px-6 py-3 rounded shadow-lg z-50';
+notification.textContent = `Opening ${fileName} in new tab...`;
+document.body.appendChild(notification);
+setTimeout(() => {
+notification.remove();
+}, 3000);
+});
+});
+// Mobile menu toggle
+const menuButton = document.querySelector('button.md\\:hidden');
+const mobileMenu = document.querySelector('.fixed.inset-0.bg-white');
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+mobileMenu.classList.toggle('flex');
+});
+// Mobile menu links (close menu when clicked)
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+mobileMenu.classList.remove('flex');
+});
+});
+// Smooth scrolling for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+// Back to top button
+const backToTopButton = document.getElementById('backToTop');
+window.addEventListener('scroll', function() {
+if (window.pageYOffset > 300) {
+backToTopButton.classList.remove('opacity-0', 'invisible');
+backToTopButton.classList.add('opacity-100', 'visible');
+} else {
+backToTopButton.classList.add('opacity-0', 'invisible');
+backToTopButton.classList.remove('opacity-100', 'visible');
+}
+});
+backToTopButton.addEventListener('click', function() {
+window.scrollTo({
+top: 0,
+behavior: 'smooth'
+});
+});
+// Form validation
+const contactForm = document.querySelector('#contact form');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+const consentCheckbox = document.getElementById('consent');
+let isValid = true;
+if (!nameInput.value.trim()) {
+nameInput.style.borderColor = 'red';
+isValid = false;
+} else {
+nameInput.style.borderColor = '';
+}
+if (!emailInput.value.trim() || !emailInput.value.includes('@')) {
+emailInput.style.borderColor = 'red';
+isValid = false;
+} else {
+emailInput.style.borderColor = '';
+}
+if (!messageInput.value.trim()) {
+messageInput.style.borderColor = 'red';
+isValid = false;
+} else {
+messageInput.style.borderColor = '';
+}
+if (!consentCheckbox.checked) {
+consentCheckbox.nextElementSibling.style.color = 'red';
+isValid = false;
+} else {
+consentCheckbox.nextElementSibling.style.color = '';
+}
+if (isValid) {
+// Form is valid, you would normally submit it here
+alert('Message sent successfully! I will get back to you soon.');
+contactForm.reset();
+}
+});
+}
+// Certificate filter buttons
+const filterButtons = document.querySelectorAll('#certifications button');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+});
+// Add active class to clicked button
+this.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-100');
+this.classList.add('bg-primary', 'text-white');
+// Here you would normally filter the certificates
+// For this demo, we're just showing all certificates
+});
+});
+});
+</script>
+</body>
+</html>
